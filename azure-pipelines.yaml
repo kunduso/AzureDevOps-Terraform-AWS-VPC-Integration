@@ -12,3 +12,9 @@ steps:
   displayName: 'Install Terraform 0.13.5'
   inputs:
     terraformVersion: 0.13.5
+
+- powershell: |
+   Write-Host "This is the current working directory: $(build.sourcesdirectory)"
+   terraform init -backend-config="bucket=skundu-terraform-remote-state" -backend-config="key=tf/ADO-TF-VPC-Int/terraform.tfstate" -backend-config="region=$(region)" -backend-config="access_key=$(access_key)" -backend-config="secret_key=$(secret_key)" -no-color
+  workingDirectory: $(build.sourcesdirectory)
+  displayName: 'terraform init'
