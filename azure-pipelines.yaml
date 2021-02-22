@@ -7,7 +7,7 @@ pool:
 variables:
   - group: ADO-TF-AWS-VPC-Int
   - name: region
-  - value: 'us-east-1'
+    value: 'us-east-1'
 
 steps:
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
