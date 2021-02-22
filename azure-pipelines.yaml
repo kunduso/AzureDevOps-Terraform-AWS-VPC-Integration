@@ -22,6 +22,6 @@ steps:
   displayName: 'terraform init'
 
 - powershell: |
-  terraform validate -json
+   terraform validate -json
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform validate'
