@@ -30,3 +30,8 @@ steps:
    terraform plan -var region=$(region) -var access_key=$(access_key) -var secret_key=$(secret_key) -out application.tfplan -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform plan'
+
+- powershell: |
+   terraform apply "application.tfplan" -no-color
+  workingDirectory: $(build.sourcesdirectory)
+  displayName: 'terraform apply'
