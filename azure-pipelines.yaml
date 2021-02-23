@@ -22,6 +22,11 @@ steps:
   displayName: 'terraform init'
 
 - powershell: |
-   terraform validate
+   terraform validate -json -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform validate'
+
+- powershell: |
+   terraform plan -var region=$(region) -var access_key=$(access_key) -var secret_key=$(secret_key) -out application.tfplan -no-color
+  workingDirectory: $(build.sourcesdirectory)
+  displayName: 'terraform plan'
