@@ -14,6 +14,7 @@ steps:
   displayName: 'Install Terraform 0.14.0'
   inputs:
     terraformVersion: 0.14.0
+# Terraform versions: https://releases.hashicorp.com/terraform/
 
 - powershell: |
    Write-Host "This is the current working directory: $(build.sourcesdirectory)"
