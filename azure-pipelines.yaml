@@ -13,7 +13,7 @@ steps:
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
   displayName: 'Install Terraform 0.13.5'
   inputs:
-    terraformVersion: 0.13.5
+    terraformVersion: 0.14.0
 
 - powershell: |
    Write-Host "This is the current working directory: $(build.sourcesdirectory)"
