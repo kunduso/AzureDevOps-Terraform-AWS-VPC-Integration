@@ -40,6 +40,6 @@ steps:
   displayName: 'terraform apply'
 
 - powershell: |
-   terraform show -json -no-color
+   terraform show -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform show'
