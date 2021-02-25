@@ -9,6 +9,8 @@ variables:
   - name: region
     value: 'us-east-1'
 
+
+# Install Terraform extension to use this task https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks&ssr=false#overview
 steps:
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
   displayName: 'Install Terraform 0.14.0'
@@ -36,3 +38,8 @@ steps:
    terraform apply "application.tfplan" -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform apply'
+
+- powershell: |
+   terraform show "application.tfplan" -no-color
+  workingDirectory: $(build.sourcesdirectory)
+  displayName: 'terraform show'
