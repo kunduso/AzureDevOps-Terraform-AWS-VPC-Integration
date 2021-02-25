@@ -40,6 +40,6 @@ steps:
   displayName: 'terraform apply'
 
 - powershell: |
-   terraform show "application.tfplan" -no-color
+   terraform show "application.tfplan" -json -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform show'
