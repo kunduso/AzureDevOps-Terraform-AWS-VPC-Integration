@@ -38,8 +38,3 @@ steps:
    terraform apply "application.tfplan" -no-color
   workingDirectory: $(build.sourcesdirectory)
   displayName: 'terraform apply'
-
-- powershell: |
-   terraform show -no-color
-  workingDirectory: $(build.sourcesdirectory)
-  displayName: 'terraform show'
